@@ -6,14 +6,22 @@ import java.util.Scanner;
 public class Main {
 
 public static void main(String[] args) {
-        String excelPath = null;     //Excel Path
+
+        File excelPath = null;
+        //生成窗口UI
+        UI gUI = new UI();
+        excelPath = gUI.createAndShowUI();
+
+
+//        String excelPath = null;     //Excel Path
 //        String excelPath = "E:\\log\\Top30.xlsx";
-        System.out.println("请输入游戏Excel表格所在路径：（以回车键结束！）");
-        Scanner sc = new Scanner(System.in);
-        excelPath = sc.nextLine();
+//        System.out.println("请输入游戏Excel表格所在路径：（以回车键结束！）");
+//        Scanner sc = new Scanner(System.in);
+//        excelPath = sc.nextLine();
 
 
-        File excelFile = new File(excelPath);
+
+        File excelFile = excelPath;
         File resultFile = new File(excelFile.getParent()+ "\\result.xlsx" );
 //        File resultTxt = new File(excelFile.getParent() + "\\result.txt");
         List<String> excelList = null;
